@@ -1,7 +1,4 @@
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
 
 public class Les2 {
 
@@ -10,7 +7,7 @@ public class Les2 {
         int array1[] = {1, 1, 0, 0, 1, 0, 1, 1, 0, 0};
         System.out.println("Исходный массив: " + Arrays.toString(array1));
         for (int i = 0; i < array1.length; i++)
-            array1[i] = array1[i]^1;
+            array1[i] = array1[i] ^ 1;
         System.out.println("Массив с заменой 1 на 0 и 0 на 1: " + Arrays.toString(array1));
 
         //Задание 2
@@ -35,11 +32,10 @@ public class Les2 {
     //Задание 4
     public static void fillDiagonal1(int size) {
         int arr[][] = new int[size][size];
-        for (int i = 0, j = 0; i < arr.length; i++, j++)
-            if (i == j) {
-                arr[i][j] = 1;
-                arr[size - 1 - i][j] = 1;
-            }
+        for (int i = 0; i < arr.length; i++) {
+            arr[i][i] = 1;
+            arr[size - 1 - i][i] = 1;
+        }
         System.out.println(new StringBuilder("\nКвадратный двумерный массив размером ").append(size).append(" c 1 по диагонали:"));
         for (int i = 0; i < arr.length; i++)
             System.out.println(Arrays.toString(arr[i]));
